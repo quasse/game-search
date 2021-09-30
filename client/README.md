@@ -6,7 +6,7 @@
 
 
 API Stuff
-* the API for all games:"https://api.rawg.io/api/games?key=5e9382c647414169a298896429b9ccaf"
+* the API for all games:"https://api.rawg.io/api/games?key=5e9382c647414169a298896429b9ccaf&page1"
 
 * page2 or others: "https://api.rawg.io/api/games?key=5e9382c647414169a298896429b9ccaf&page2"
 
