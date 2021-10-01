@@ -11,10 +11,9 @@ const typeDefs = gql`
   type Game {
     _id: ID
     title: String
-    imange: String
+    image: String
     rating: String
     suggestions: Int
-    platforms: [String]
   }
 
   type Auth {
@@ -23,6 +22,7 @@ const typeDefs = gql`
   }
 
   type Query {
+    me: User
     users: [User]
     user(username: String!): User
     games(username: String!): [Game]
@@ -32,6 +32,12 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    addGame(
+      title: String!
+      image: String!
+      rating: String
+      suggestions: Int
+    ): Game
   }
 `;
 
