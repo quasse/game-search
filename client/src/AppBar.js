@@ -15,6 +15,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import './AppBar.css'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -98,7 +99,9 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      {/* <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
+      <MenuItem onClick={handleMenuClose}>Login</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Sign Up</MenuItem>
     </Menu>
   );
 
@@ -121,31 +124,55 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem>
         <IconButton size="large" aria-label="" color="inherit">
-          <Badge badgeContent={4} color="error">
+          {/* <Badge badgeContent={4} color="error">
             <MailIcon />
-          </Badge>
+          </Badge> */}
         </IconButton>
         <p>Messages</p>
       </MenuItem>
+
+      
       <MenuItem>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
+          {/* <Badge badgeContent={17} color="error">
             <NotificationsIcon />
-          </Badge>
+          </Badge> */}
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem>
         <IconButton
           size="large"
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
+        >
+              </IconButton>
+        <p>SIgn In</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton
+          size="large"
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="inherit"
+        >
+        </IconButton>
+        <p>Sign Up</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton
+        //   size="large"
+        //   aria-label="account of current user"
+        //   aria-controls="primary-search-account-menu"
+        //   aria-haspopup="true"
+        //   color="inherit"
         >
           <AccountCircle />
         </IconButton>
@@ -173,7 +200,7 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            Games
+            ATTS Games
           </Typography>
           <Search>
             <SearchIconWrapper>
