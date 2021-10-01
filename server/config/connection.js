@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 mongoose.connect(
   process.env.MONGOD_URI || "mongodb://localhost/game-search",
@@ -6,8 +7,6 @@ mongoose.connect(
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    //useCreateIndex: true,
-    //useFindAndModify: false,
   }
 );
 
