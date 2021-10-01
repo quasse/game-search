@@ -144,7 +144,7 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem>
         <IconButton
           size="large"
           aria-label="account of current user"
@@ -163,16 +163,16 @@ export default function PrimarySearchAppBar() {
           aria-haspopup="true"
           color="inherit"
         >
-              </IconButton>
+        </IconButton>
         <p>Sign Up</p>
       </MenuItem>
       <MenuItem>
         <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
+        //   size="large"
+        //   aria-label="account of current user"
+        //   aria-controls="primary-search-account-menu"
+        //   aria-haspopup="true"
+        //   color="inherit"
         >
           <AccountCircle />
         </IconButton>
@@ -200,7 +200,7 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            Games
+            ATTS Games
           </Typography>
           <Search>
             <SearchIconWrapper>
