@@ -120,7 +120,7 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+        <IconButton size="large" aria-label="" color="inherit">
           <Badge badgeContent={4} color="error">
             <MailIcon />
           </Badge>

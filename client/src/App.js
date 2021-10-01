@@ -29,7 +29,6 @@ function App() {
   
 </AppBar>
 
-      <Button variant="contained"> Button </Button>
     </div>
   );
 }
