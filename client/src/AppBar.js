@@ -101,7 +101,7 @@ export default function PrimarySearchAppBar() {
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
       <MenuItem onClick={handleMenuClose}>Login</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Sign p</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Sign Up</MenuItem>
     </Menu>
   );
 
@@ -155,7 +155,7 @@ export default function PrimarySearchAppBar() {
               </IconButton>
         <p>SIgn In</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem>
         <IconButton
           size="large"
           aria-label="account of current user"
@@ -166,7 +166,7 @@ export default function PrimarySearchAppBar() {
               </IconButton>
         <p>Sign Up</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem>
         <IconButton
           size="large"
           aria-label="account of current user"
