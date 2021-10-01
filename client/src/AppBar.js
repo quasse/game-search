@@ -100,7 +100,7 @@ export default function PrimarySearchAppBar() {
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
       <MenuItem onClick={handleMenuClose}>Login</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Sign Up</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Sign p</MenuItem>
     </Menu>
   );
 
@@ -123,23 +123,47 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem>
         <IconButton size="large" aria-label="" color="inherit">
-          <Badge badgeContent={4} color="error">
+          {/* <Badge badgeContent={4} color="error">
             <MailIcon />
-          </Badge>
+          </Badge> */}
         </IconButton>
         <p>Messages</p>
       </MenuItem>
+
+      
       <MenuItem>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
+          {/* <Badge badgeContent={17} color="error">
             <NotificationsIcon />
-          </Badge>
+          </Badge> */}
         </IconButton>
         <p>Notifications</p>
+      </MenuItem>
+      <MenuItem onClick={handleProfileMenuOpen}>
+        <IconButton
+          size="large"
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="inherit"
+        >
+              </IconButton>
+        <p>SIgn In</p>
+      </MenuItem>
+      <MenuItem onClick={handleProfileMenuOpen}>
+        <IconButton
+          size="large"
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="inherit"
+        >
+              </IconButton>
+        <p>Sign Up</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
