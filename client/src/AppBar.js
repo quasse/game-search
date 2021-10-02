@@ -127,28 +127,10 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="" color="inherit">
-          {/* <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge> */}
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
+      
 
       
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          {/* <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge> */}
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
+      
       <MenuItem>
         <IconButton
           size="large"
@@ -220,20 +202,20 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+            {/* <IconButton size="large" aria-label="show 4 new mails" color="inherit"> */}
               <Badge color="error">
-                <MailIcon />
+                {/* <MailIcon /> */}
               </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
+            {/* </IconButton> */}
+            {/* <IconButton */}
+              {/* size="large"
               aria-label="show 17 new notifications"
               color="inherit"
             >
               <Badge color="error">
                 <NotificationsIcon />
-              </Badge>
-            </IconButton>
+              </Badge> */}
+            {/* </IconButton> */}
             <IconButton
               size="large"
               edge="end"
