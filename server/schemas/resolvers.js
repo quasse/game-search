@@ -54,7 +54,6 @@ const resolvers = {
     },
     addGame: async (parent, args, context) => {
       if (context.user) {
-        console.log({ ...args });
         const game = await Game.create({ ...args });
 
         await User.findByIdAndUpdate(
@@ -65,6 +64,9 @@ const resolvers = {
 
         return game;
       }
+    },
+    deleteGame: async (parent, { _id }) => {
+      return Game.findOneAndDelete({ _id });
     },
   },
 };
