@@ -38,6 +38,7 @@ const typeDefs = gql`
       rating: String
       suggestions: Int
     ): Game
+    deleteGame(_id: ID!): Game
   }
 `;
 
