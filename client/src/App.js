@@ -8,9 +8,20 @@ import Games from "./Components/Games";
 import Header from "./Components/Header";
 import Home from "./pages/Home";
 
+// Apollo queries (Troy)
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+// set link to graphql db, "proxy" in package.json provides local db connection(Troy)
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
 function App() {
   // console.log("games", games);
   return (
+    <ApolloProvider client={client}>
     <Router>
       <Header />
       <div className="container">
@@ -19,6 +30,7 @@ function App() {
         </Switch>
       </div>
     </Router>
+    </ApolloProvider>
   );
 }
 
