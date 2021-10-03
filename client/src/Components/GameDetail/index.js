@@ -1,27 +1,28 @@
 import React, { useState, useEffect } from "react";
 
 const GameDetail = (props) => {
-  console.log(props.match.params.gameID);
+  const [game, setGame] = useState("");
 
-  const [description, setDescription] = useState("");
-
-  // when component mounts, do game api fetch
   useEffect(() => {
     const GAME_API = `https://api.rawg.io/api/games/${props.match.params.gameID}?key=${process.env.REACT_APP_API_KEY}`;
     fetch(GAME_API)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        //setGames(data.results);
-        setDescription(data.description_raw);
+        setGame(data);
       })
       .catch((err) => console.log(err));
   }, [props.match.params.gameID]);
 
   return (
     <div>
-      <h1>game detail</h1>
-      <p>{description}</p>
+      <h1>{game.name}</h1>
+      <img
+        style={{ width: "50vw" }}
+        src={game.background_image_additional}
+        alt={game.name}
+      />
+      <p>{game.description_raw}</p>
     </div>
   );
 };

@@ -9,20 +9,36 @@ import Header from "./Components/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import GameDetail from "./Components/GameDetail";
+import Profile from "./pages/Profile";
 
 // Apollo queries (Troy)
 import {
   ApolloProvider,
-  ApolloClient,
   InMemoryCache,
   createHttpLink,
+  ApolloClient,
 } from "@apollo/client";
+
+import { setContext } from "@apollo/client/link/context";
+
 // set link to graphql db, "proxy" in package.json provides local db connection(Troy)
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem("id_token");
+
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
 const client = new ApolloClient({
-  link: httpLink,
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
@@ -40,6 +56,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route path="/game/:gameID" component={GameDetail} />
+            <Route exact path="/profile" component={Profile} />
             <Route path="*" component={NotFound} />
           </Switch>
         </div>
