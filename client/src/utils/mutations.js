@@ -34,3 +34,11 @@ export const ADD_GAME = gql`
     }
   }
 `;
+
+export const DELETE_GAME = gql`
+  mutation deleteGame($_id: ID!) {
+    deleteGame(_id: $_id) {
+      _id
+    }
+  }
+`;
