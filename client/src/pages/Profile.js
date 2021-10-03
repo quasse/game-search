@@ -16,7 +16,7 @@ const Profile = (props) => {
 
   const user = data?.me || {};
 
-  console.log("user ", user.games);
+  console.log("user", user.games);
 
   return (
     <div>
@@ -24,7 +24,11 @@ const Profile = (props) => {
       <div></div>
       <div>
         {user.games.length > 0 &&
-          user.games.map((game) => <Games game={game} />)}
+          user.games.map((game) => (
+            <Link to={`/game/${game.gameId}`}>
+              <Games game={game} />
+            </Link>
+          ))}
       </div>
     </div>
   );
