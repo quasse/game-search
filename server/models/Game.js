@@ -9,10 +9,7 @@ const gameSchema = new Schema({
     type: String,
     required: true,
   },
-  rating: {
-    type: String,
-  },
-  suggestions: {
+  gameId: {
     type: Number,
   },
 });

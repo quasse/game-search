@@ -12,8 +12,7 @@ const typeDefs = gql`
     _id: ID
     title: String
     image: String
-    rating: String
-    suggestions: Int
+    gameId: Int
   }
 
   type Auth {
@@ -32,12 +31,7 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addGame(
-      title: String!
-      image: String!
-      rating: String
-      suggestions: Int
-    ): Game
+    addGame(title: String!, image: String!, gameId: Int): Game
     deleteGame(_id: ID!): Game
   }
 `;
