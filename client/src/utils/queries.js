@@ -17,6 +17,7 @@ export const QUERY_ME = gql`
       username
       email
       games {
+        _id
         title
         image
         gameId
