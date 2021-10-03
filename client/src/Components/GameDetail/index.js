@@ -32,6 +32,7 @@ const GameDetail = (props) => {
     } catch (e) {
       console.log(e);
     }
+    window.location.assign("/");
   };
 
   return (
