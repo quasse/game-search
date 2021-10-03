@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { ADD_GAME } from "../../utils/mutations";
+import { useMutation } from "@apollo/client";
 
 const GameDetail = (props) => {
   const [game, setGame] = useState("");
 
+  //Call API for description of game
   useEffect(() => {
     const GAME_API = `https://api.rawg.io/api/games/${props.match.params.gameID}?key=${process.env.REACT_APP_API_KEY}`;
     fetch(GAME_API)
@@ -14,6 +17,23 @@ const GameDetail = (props) => {
       .catch((err) => console.log(err));
   }, [props.match.params.gameID]);
 
+  //Add game to user's profile
+  const [addGame, { error }] = useMutation(ADD_GAME);
+
+  const handleClick = () => {
+    try {
+      addGame({
+        variables: {
+          title: game.name,
+          image: game.background_image,
+          gameId: game.id,
+        },
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <div>
       <h1>{game.name}</h1>
@@ -23,6 +43,7 @@ const GameDetail = (props) => {
         alt={game.name}
       />
       <p>{game.description_raw}</p>
+      <button onClick={handleClick}>Add game</button>
     </div>
   );
 };
