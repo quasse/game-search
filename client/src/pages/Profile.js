@@ -12,6 +12,10 @@ const Profile = (props) => {
     return <div>Loading...</div>;
   }
 
+  if (!Auth.loggedIn()) {
+    return <h4>You must be logged in to view this page</h4>;
+  }
+
   console.log("data: ", data);
 
   const user = data?.me || {};
