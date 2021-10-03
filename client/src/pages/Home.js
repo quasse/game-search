@@ -4,6 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { styled, alpha } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
+import { Link } from "react-router-dom";
 //apollo queries (Troy)
 import { useQuery } from "@apollo/client";
 import { useMutation } from "@apollo/client";
@@ -155,7 +156,12 @@ const Home = () => {
       </form>
 
       <div>
-        {games.length > 0 && games.map((game) => <Games game={game} />)}
+        {games.length > 0 &&
+          games.map((game) => (
+            <Link to={`/game/${game.id}`}>
+              <Games game={game} />{" "}
+            </Link>
+          ))}
       </div>
     </main>
   );

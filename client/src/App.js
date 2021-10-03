@@ -8,6 +8,7 @@ import Games from "./Components/Games";
 import Header from "./Components/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import GameDetail from "./Components/GameDetail";
 
 // Apollo queries (Troy)
 import {
@@ -24,6 +25,10 @@ const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache(),
 });
+
+function NotFound() {
+  return <h1>404 Page Not Found</h1>;
+}
 function App() {
   // console.log("games", games);
   return (
@@ -34,6 +39,8 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
+            <Route path="/game/:gameID" component={GameDetail} />
+            <Route path="*" component={NotFound} />
           </Switch>
         </div>
       </Router>
