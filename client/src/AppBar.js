@@ -17,17 +17,16 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import "./AppBar.css";
 
+import { Link } from "react-router-dom";
+
 import SearchIcon from "@mui/icons-material/Search";
 
 import InputBase from "@mui/material/InputBase";
 import { styled, alpha } from "@mui/material/styles";
 
-
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
-
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -68,7 +67,9 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       {/* <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
-      <MenuItem onClick={handleMenuClose}>Login</MenuItem>
+      <Link to="/login">
+        <MenuItem onClick={handleMenuClose}>Login</MenuItem>{" "}
+      </Link>
       <MenuItem onClick={handleMenuClose}>Sign Up</MenuItem>
     </Menu>
   );
