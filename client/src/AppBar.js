@@ -17,7 +17,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import "./AppBar.css";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -67,9 +67,9 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       {/* <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
-      <Link to="/login">
+      <NavLink to="/login">
         <MenuItem onClick={handleMenuClose}>Login</MenuItem>{" "}
-      </Link>
+      </NavLink>
       <MenuItem onClick={handleMenuClose}>Sign Up</MenuItem>
     </Menu>
   );
