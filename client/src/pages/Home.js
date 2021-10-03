@@ -3,6 +3,7 @@ import Games from "../Components/Games";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { styled, alpha } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
 //apollo queries (Troy)
 import { useQuery } from "@apollo/client";
 import { useMutation } from "@apollo/client";
@@ -100,14 +101,10 @@ const Home = () => {
   // game state for api fetch
   const [games, setGames] = useState([]);
 
-    // create a state for the user input
+  // create a state for the user input
   const [searchInput, setSearchInput] = useState("");
 
   const GAME_API = `https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}&page1`;
-
-  const SEARCH_API = `https://api.rawg.io/api/games?key=${
-    process.env.REACT_APP_API_KEY
-  }&search=${"<some_state_variable>"}`;
 
   // when component mounts, do game api fetch
   useEffect(() => {
@@ -120,19 +117,42 @@ const Home = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchInput === "") {
+      return;
+    }
+    const SEARCH_API = `https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}&search=${searchInput}`;
+
+    fetch(SEARCH_API)
+      .then((res) => res.json())
+      .then((data) => {
+        setGames(data.results);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
-    <main classNmae="home-app" style={{backgroundColor: "#8e8e8e"}}>
-      <Search>
-        <SearchIconWrapper>
-          <SearchIcon />
-        </SearchIconWrapper>
-        <StyledInputBase
-          value={searchInput}
-          onChange={(event) => setSearchInput(event.target.value)}
-          placeholder="Search…"
-          inputProps={{ "aria-label": "search" }}
-        />
-      </Search>
+    <main classNmae="home-app" style={{ backgroundColor: "#8e8e8e" }}>
+      <form onSubmit={handleSearchSubmit}>
+        <Search>
+          <IconButton
+            size="medium"
+            aria-label="search"
+            color="inherit"
+            role="button"
+            onClick={handleSearchSubmit}
+          >
+            <SearchIcon />
+          </IconButton>
+          <StyledInputBase
+            value={searchInput}
+            onChange={(event) => setSearchInput(event.target.value)}
+            placeholder="Search…"
+            inputProps={{ "aria-label": "search" }}
+          />
+        </Search>
+      </form>
 
       <div>
         {games.length > 0 && games.map((game) => <Games game={game} />)}
