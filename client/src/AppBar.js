@@ -16,6 +16,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import "./AppBar.css";
+import { Button } from "@mui/material"
 
 import { Link, NavLink } from "react-router-dom";
 
@@ -133,7 +134,7 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -141,14 +142,24 @@ export default function PrimarySearchAppBar() {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
+          
+          
+       
+          
+          
+          
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            ATTS Games
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Button color="inherit">
+                ATTS Games
+          </Button>
+            </Link>
           </Typography>
           {/* <Search>
             <SearchIconWrapper>
