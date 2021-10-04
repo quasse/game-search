@@ -16,14 +16,14 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import "./AppBar.css";
+import { Button } from "@mui/material"
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import SearchIcon from "@mui/icons-material/Search";
 
 import InputBase from "@mui/material/InputBase";
 import { styled, alpha } from "@mui/material/styles";
-
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -67,9 +67,9 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       {/* <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
-      <Link to="/login">
+      <NavLink to="/login">
         <MenuItem onClick={handleMenuClose}>Login</MenuItem>{" "}
-      </Link>
+      </NavLink>
       <MenuItem onClick={handleMenuClose}>Sign Up</MenuItem>
     </Menu>
   );
@@ -130,7 +130,7 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -138,14 +138,24 @@ export default function PrimarySearchAppBar() {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
+          
+          
+       
+          
+          
+          
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            ATTS Games
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Button color="inherit">
+                ATTS Games
+          </Button>
+            </Link>
           </Typography>
           {/* <Search>
             <SearchIconWrapper>

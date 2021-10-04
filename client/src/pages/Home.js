@@ -12,48 +12,6 @@ import { QUERY_USERS } from "../utils/queries";
 import { ADD_USER } from "../utils/mutations";
 import { LOGIN_USER } from "../utils/mutations";
 
-// apollo function that returns loading and data properties(Troy)
-// asynchronous, loading property indicates if fetch is complete or not
-// function QueryUsers(){
-//   const { loading, data } = useQuery(QUERY_USERS);
-//   if (!loading){
-//     const users = data?.users || [];
-//     console.log(users);
-//   }
-// };
-// async function LoginUser(){
-//   const [loginUser, { error }] = useMutation(LOGIN_USER);
-//     try{
-//   const {data} = await loginUser({
-//     variables: {
-//       username: "troy123",
-//       password: "password123",
-//       email: "email@gmail.com",
-//     }
-//   });
-//   console.log(data);
-// }catch(error){
-//   console.log(error);
-// }
-// };
-
-// We will use this but if it runs without an event listener it will return errors
-// async function AddUser(){
-//   const [addUser, { error }] = useMutation(ADD_USER);
-//   try{
-//   const {data} = await addUser({
-//     variables: {
-//       username: "troy1234",
-//       password: "password1234",
-//       email: "email1234@gmail.com",
-//     }
-//   });
-//   console.log(data);
-// }catch(error){
-//   console.log(error);
-// }
-// };
-
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -95,10 +53,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Home = () => {
-  // QueryUsers();
-  // AddUser();
-  // LoginUser();
-
   // game state for api fetch
   const [games, setGames] = useState([]);
 
