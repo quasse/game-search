@@ -9,6 +9,8 @@ class AuthService {
 
   loggedIn() {
     const token = localStorage.getItem("id_token");
+    // console log for testing, delete later
+    console.log(token);
     return !!token && !this.isTokenExpired(token);
   }
 
