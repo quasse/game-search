@@ -8,6 +8,7 @@ import Games from "./Components/Games";
 import Header from "./Components/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import GameDetail from "./Components/GameDetail";
 import Profile from "./pages/Profile";
 
@@ -55,6 +56,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
             <Route path="/game/:gameID" component={GameDetail} />
             <Route exact path="/profile" component={Profile} />
             <Route path="*" component={NotFound} />

@@ -12,6 +12,11 @@ class AuthService {
     return !!token && !this.isTokenExpired(token);
   }
 
+  logout(){
+    localStorage.removeItem("id_token");
+    window.location.assign('/');
+  }
+
   isTokenExpired(token) {
     try {
       const decoded = decode(token);
