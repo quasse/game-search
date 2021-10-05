@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ADD_GAME } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
+import Auth from "../../utils/auth";
 
 const GameDetail = (props) => {
   const [game, setGame] = useState("");
@@ -44,7 +45,12 @@ const GameDetail = (props) => {
         alt={game.name}
       />
       <p>{game.description_raw}</p>
-      <button onClick={handleClick}>Add game</button>
+
+      {Auth.loggedIn() ? (
+        <button onClick={handleClick}>Add game</button>
+      ) : (
+        <p>Log in to add this game to your profile</p>
+      )}
     </div>
   );
 };
