@@ -45,7 +45,7 @@ const Profile = (props) => {
     <div>
       <h2>Viewing{` ${user.username}'s profile`}</h2>
       <div>
-        {user.games.length > 0 &&
+        {user.games.length > 0 ? (
           user.games.map((game) => (
             <div id={game._id}>
               <Link to={`/game/${game.gameId}`}>
@@ -53,7 +53,10 @@ const Profile = (props) => {
               </Link>
               <button onClick={handleClick}>Delete game</button>
             </div>
-          ))}
+          ))
+        ) : (
+          <h4>Add games to your profile to see them here</h4>
+        )}
       </div>
     </div>
   );
