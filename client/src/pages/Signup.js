@@ -36,31 +36,40 @@ const Signup = (props) => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <input
-        className="form-input"
-        placeholder="Email"
-        name="email"
-        value={formState.email}
-        onChange={handleChange}
-      />
-      <input
-        className="form-input"
-        placeholder="User Name"
-        name="username"
-        value={formState.username}
-        onChange={handleChange}
-      />
-      <input
-        className="form-input"
-        placeholder="Password"
-        name="password"
-        type="password"
-        value={formState.password}
-        onChange={handleChange}
-      />
-      <button type="submit">Submit</button>
-    </form>
+    <div className="signup-container">
+        <h4>Sign Up</h4>
+        <form  className="signup-form" onSubmit={handleFormSubmit}>
+            <label for="signup-email">Email: </label>
+            <input
+                id="signup-email"
+                className="form-input"
+                placeholder="Email"
+                name="email"
+                value={formState.email}
+                onChange={handleChange}
+            />
+            <label for="signup-username">User Name: </label>
+            <input
+                id="signup-username"
+                className="form-input"
+                placeholder="User Name"
+                name="username"
+                value={formState.username}
+                onChange={handleChange}
+            />
+            <label for="signup-password">Password: </label>
+            <input
+                id="signup-password"
+                className="form-input"
+                placeholder="Password"
+                name="password"
+                type="password"
+                value={formState.password}
+                onChange={handleChange}
+            />
+            <button className="form-button" type="submit">Submit</button>
+        </form>
+    </div>
   );
 };
 
