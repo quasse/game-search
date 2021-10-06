@@ -16,7 +16,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import "./AppBar.css";
-import { Button } from "@mui/material"
+import { Button } from "@mui/material";
 
 import { Link, NavLink } from "react-router-dom";
 
@@ -27,9 +27,6 @@ import { styled, alpha } from "@mui/material/styles";
 
 import User from "./Components/User";
 import Auth from "./utils/auth";
-
-
-
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -55,11 +52,11 @@ export default function PrimarySearchAppBar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-  const handleLogout = () =>{
-    if(Auth.loggedIn()){
+  const handleLogout = () => {
+    if (Auth.loggedIn()) {
       Auth.logout();
     }
-  }
+  };
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -78,24 +75,29 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      {Auth.loggedIn()? 
-      (
-        <>
-        <NavLink to="/profile">
-          <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-        </NavLink>
-          <MenuItem onClick={function(){handleMenuClose(); handleLogout();}}>Logout</MenuItem>
-        </>
-      ):
-      (
-        <>
+      {Auth.loggedIn() ? (
+        <div>
+          <NavLink to="/profile">
+            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+          </NavLink>
+          <MenuItem
+            onClick={function () {
+              handleMenuClose();
+              handleLogout();
+            }}
+          >
+            Logout
+          </MenuItem>
+        </div>
+      ) : (
+        <div>
           <NavLink to="/login">
             <MenuItem onClick={handleMenuClose}>Login</MenuItem>{" "}
           </NavLink>
           <NavLink to="/signup">
             <MenuItem onClick={handleMenuClose}>Sign Up</MenuItem>
           </NavLink>
-        </>
+        </div>
       )}
       {/* <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
     </Menu>
@@ -166,12 +168,7 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton> */}
-          
-          
-       
-          
-          
-          
+
           <Typography
             variant="h6"
             noWrap
@@ -180,12 +177,8 @@ export default function PrimarySearchAppBar() {
           >
             <Link to="/" style={{ textDecoration: "none" }}>
               <Button color="inherit">
-                
-             <h1 style={{ color: 'white', size: 'small' }}>ATTS Games
-             
-             </h1>
-         
-          </Button>
+                <h1 style={{ color: "white", size: "small" }}>ATTS Games</h1>
+              </Button>
             </Link>
           </Typography>
           {/* <Search>
