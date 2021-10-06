@@ -5,6 +5,9 @@ import InputBase from "@mui/material/InputBase";
 import { styled, alpha } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import { Link } from "react-router-dom";
+import ReactDOM from "react-dom";
+import { Card, CardContent } from "@mui/material";
+
 //apollo queries (Troy)
 import { useQuery } from "@apollo/client";
 import { useMutation } from "@apollo/client";
@@ -90,7 +93,7 @@ const Home = () => {
   return (
     <main classNmae="home-app" style={{ backgroundColor: "#8e8e8e" }}>
       <form onSubmit={handleSearchSubmit}>
-        <Search>
+        <Search style={{ color: "white" }}>
           <IconButton
             size="medium"
             aria-label="search"
@@ -109,13 +112,16 @@ const Home = () => {
         </Search>
       </form>
 
-      <div>
-        {games.length > 0 &&
-          games.map((game) => (
-            <Link to={`/game/${game.id}`}>
-              <Games game={game} />{" "}
-            </Link>
-          ))}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "row",
+          alignItems: "center",
+          flexWrap: 'wrap'
+        }}
+      >
+        {games.length > 0 && games.map((game) => <Games game={game} />)}
       </div>
     </main>
   );

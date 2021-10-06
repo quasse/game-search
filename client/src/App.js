@@ -11,7 +11,6 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import GameDetail from "./Components/GameDetail";
 import Profile from "./pages/Profile";
-
 // Apollo queries (Troy)
 import {
   ApolloProvider,
