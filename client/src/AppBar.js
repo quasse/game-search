@@ -120,38 +120,35 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        ></IconButton>
-        <p>SIgn In</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        ></IconButton>
-        <p>Sign Up</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-        //   size="large"
-        //   aria-label="account of current user"
-        //   aria-controls="primary-search-account-menu"
-        //   aria-haspopup="true"
-        //   color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
+      <div>
+        <NavLink to="/">
+          <MenuItem onClick={handleMenuClose}>Home</MenuItem>{" "}
+        </NavLink>
+      </div>
+      {Auth.loggedIn() ? (
+        <div>
+          <NavLink to="/profile">
+            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+          </NavLink>
+          <MenuItem
+            onClick={function () {
+              handleMenuClose();
+              handleLogout();
+            }}
+          >
+            Logout
+          </MenuItem>
+        </div>
+      ) : (
+        <div>
+          <NavLink to="/login">
+            <MenuItem onClick={handleMenuClose}>Login</MenuItem>{" "}
+          </NavLink>
+          <NavLink to="/signup">
+            <MenuItem onClick={handleMenuClose}>Sign Up</MenuItem>
+          </NavLink>
+        </div>
+      )}
     </Menu>
   );
 
