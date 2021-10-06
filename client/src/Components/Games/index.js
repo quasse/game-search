@@ -12,8 +12,6 @@ const Games = ({ game }) => {
       sx={{
         margin: "10px",
         width: `45vw`,
-        height: "200px",
-        overflow: "scroll",
       }}
     >
       <div className="games" onClick={console.log("hello")}>
@@ -27,8 +25,7 @@ const Games = ({ game }) => {
         >
           <CardMedia
             component="img"
-            width="80%"
-            // height="100"
+            width="25vw"
             //style={{ width: "80%", outline: "auto" }}
             image={game.background_image || game.image}
             style={{ margin: "0 auto" }}
