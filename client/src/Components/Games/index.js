@@ -28,6 +28,7 @@ const Games = ({ game, isProfile = false }) => {
   return (
     <Card
       sx={{
+        background: "light",
         margin: "10px",
         width: `45vw`,
       }}
@@ -39,6 +40,7 @@ const Games = ({ game, isProfile = false }) => {
             justifyContent: "center",
             flexDirection: "column",
             alignItems: "center",
+            color: "trans",
           }}
         >
           <CardMedia
@@ -46,7 +48,7 @@ const Games = ({ game, isProfile = false }) => {
             width="25vw"
             //style={{ width: "80%", outline: "auto" }}
             image={game.background_image || game.image}
-            style={{ margin: "0 auto" }}
+            style={{ margin: "0 auto", borderRadius: 1, outline: "1" }}
           />
           {/* <img
               
@@ -54,9 +56,12 @@ const Games = ({ game, isProfile = false }) => {
               alt={game.name}
             /> */}
           <Link to={`/game/${game.id}`}>
-            <p style={{ borderRadius: 1, outline: "1", textAlign: "center" }}>
-              {game.name || game.title}
-            </p>
+            <div>
+          
+              <p style={{ borderRadius: 1, outline: "1", textAlign: "center", color: "black", fontSize: "150%" }}>
+                {game.name || game.title}
+              </p>
+            </div>
           </Link>
           {isProfile && (
             <button dataid={game._id} onClick={handleClick}>

@@ -118,7 +118,7 @@ const Home = () => {
           justifyContent: "center",
           flexDirection: "row",
           alignItems: "center",
-          flexWrap: 'wrap'
+          flexWrap: 'wrap',
         }}
       >
         {games.length > 0 && games.map((game) => <Games game={game} />)}
