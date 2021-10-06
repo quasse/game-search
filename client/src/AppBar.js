@@ -24,6 +24,13 @@ import SearchIcon from "@mui/icons-material/Search";
 
 import InputBase from "@mui/material/InputBase";
 import { styled, alpha } from "@mui/material/styles";
+
+import User from "./Components/User";
+import Auth from "./utils/auth";
+
+
+
+
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -48,6 +55,12 @@ export default function PrimarySearchAppBar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  const handleLogout = () =>{
+    if(Auth.loggedIn()){
+      Auth.logout();
+    }
+  }
+
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
@@ -65,12 +78,26 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      {Auth.loggedIn()? 
+      (
+        <>
+        <NavLink to="/profile">
+          <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+        </NavLink>
+          <MenuItem onClick={function(){handleMenuClose(); handleLogout();}}>Logout</MenuItem>
+        </>
+      ):
+      (
+        <>
+          <NavLink to="/login">
+            <MenuItem onClick={handleMenuClose}>Login</MenuItem>{" "}
+          </NavLink>
+          <NavLink to="/signup">
+            <MenuItem onClick={handleMenuClose}>Sign Up</MenuItem>
+          </NavLink>
+        </>
+      )}
       {/* <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
-      <NavLink to="/login">
-        <MenuItem onClick={handleMenuClose}>Login</MenuItem>{" "}
-      </NavLink>
-      <MenuItem onClick={handleMenuClose}>Sign Up</MenuItem>
     </Menu>
   );
 
@@ -153,7 +180,11 @@ export default function PrimarySearchAppBar() {
           >
             <Link to="/" style={{ textDecoration: "none" }}>
               <Button color="inherit">
-                ATTS Games
+                
+             <h1 style={{ color: 'white', size: 'small' }}>ATTS Games
+             
+             </h1>
+         
           </Button>
             </Link>
           </Typography>
@@ -206,6 +237,8 @@ export default function PrimarySearchAppBar() {
               <MoreIcon />
             </IconButton>
           </Box>
+          {/* Display Username if logged in */}
+          <User />
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
