@@ -25,7 +25,14 @@ const Games = ({ game, isProfile = false }) => {
   console.log("game ", game);
 
   return (
-    <Card className="game-card">
+    <Card className="game-card"
+    sx={{
+      border:"3px solid",
+      borderColor: 'rgba(1, 8, 18 .5)'
+      
+
+    }}
+    >
       <div className="games" onClick={console.log("hello")}>
         <CardContent
           sx={{
@@ -34,12 +41,18 @@ const Games = ({ game, isProfile = false }) => {
             flexDirection: "column",
             alignItems: "center",
             color: "trans",
+            borderColor: 'rgba(1, 8, 18 .5)',
+            paddingRight: '10px',
+            paddingLeft: '10px',
+            marginLeft: '10px',
+            marginRight: '10px',
           }}
         >
           <CardMedia className= "game-card-img"
             component="img"
             width="25vw"
             height="325vw"
+            border= "3px" 
             image={game.background_image || game.image}
      
           />

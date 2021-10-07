@@ -124,6 +124,7 @@ a {
   margin: 10px;
   width: 45vw;
   height: 35vw;
+  
 }
 
 .button {
@@ -136,6 +137,8 @@ a {
   font-weight: bolder;
   
 }
+
+
 
 @media screen and (max-width: 720px) {
   .game-card {
