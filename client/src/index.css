@@ -126,6 +126,17 @@ a {
   height: 35vw;
 }
 
+.button {
+  color:rgb(226, 226, 240);
+  font-size: bolder;
+  background-color: rgb(19, 33, 231);
+  border: 3px solid rgb(49, 46, 46);
+  font-size: 15px;
+  opacity: .75;
+  font-weight: bolder;
+  
+}
+
 @media screen and (max-width: 720px) {
   .game-card {
     width: 80vw;

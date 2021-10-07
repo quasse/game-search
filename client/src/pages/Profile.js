@@ -24,10 +24,10 @@ const Profile = (props) => {
   return (
     <div className="profile-Container">
       <h2>Viewing{` ${user.username}'s profile`}</h2>
-      <div>
+      <div >
         {user.games.length > 0 ? (
           user.games.map((game) => (
-            <Games key={game._id} game={game} isProfile={true} />
+            <Games className="profile-games" key={game._id} game={game} isProfile={true} />
           ))
         ) : (
           <h4>Add games to your profile to see them here</h4>

@@ -44,13 +44,14 @@ const GameDetail = (props) => {
         src={game.background_image_additional}
         alt={game.name}
       />
-      <p>{game.description_raw}
+      <p className="text">
+        {game.description_raw}
      
       
       </p>
 
       {Auth.loggedIn() ? (
-        <button onClick={handleClick}>Add game</button>
+        <button className="button2" onClick={handleClick}>Add game</button>
       ) : (
         <p>Log in to add this game to your profile</p>
       )}
