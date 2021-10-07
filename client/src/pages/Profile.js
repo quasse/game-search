@@ -4,7 +4,7 @@ import { QUERY_ME } from "../utils/queries";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 import Games from "../Components/Games";
-
+import "./profile.css";
 const Profile = (props) => {
   const { loading, data } = useQuery(QUERY_ME);
 
@@ -23,7 +23,7 @@ const Profile = (props) => {
   console.log("user", user.games);
 
   return (
-    <div>
+    <div className= "profile-Container">
       <h2>Viewing{` ${user.username}'s profile`}</h2>
       <div>
         {user.games.length > 0 ? (
