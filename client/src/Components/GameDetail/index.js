@@ -40,11 +40,12 @@ const GameDetail = (props) => {
     <div className= "title">
       <h1 >{game.name}</h1>
       <img className= "img"
-        style={{ width: "50vw", textAlign: "center", borderRadius: 1, outline: "1"}}
+        style={{ width: "50vw", textAlign: "center" }}
         src={game.background_image_additional}
         alt={game.name}
       />
       <p>{game.description_raw}
+     
       
       </p>
 
