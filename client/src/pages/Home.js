@@ -4,16 +4,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { styled, alpha } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
-import { Link } from "react-router-dom";
-import ReactDOM from "react-dom";
-import { Card, CardContent } from "@mui/material";
-
-//apollo queries (Troy)
-import { useQuery } from "@apollo/client";
-import { useMutation } from "@apollo/client";
-import { QUERY_USERS } from "../utils/queries";
-import { ADD_USER } from "../utils/mutations";
-import { LOGIN_USER } from "../utils/mutations";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -29,16 +19,6 @@ const Search = styled("div")(({ theme }) => ({
     marginLeft: theme.spacing(3),
     width: "auto",
   },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -91,9 +71,9 @@ const Home = () => {
   };
 
   return (
-    <main classNmae="home-app" style={{ backgroundColor: "#8e8e8e" }}>
+    <main className="home-app" style={{ backgroundColor: "#8e8e8e" }}>
       <form onSubmit={handleSearchSubmit}>
-        <Search style={{ color: "white" }}>
+        <Search style={{ margin: "20px 200px", color: "white" }}>
           <IconButton
             size="medium"
             aria-label="search"
@@ -106,7 +86,7 @@ const Home = () => {
           <StyledInputBase
             value={searchInput}
             onChange={(event) => setSearchInput(event.target.value)}
-            placeholder="Search…"
+            placeholder="Search Games..."
             inputProps={{ "aria-label": "search" }}
           />
         </Search>
@@ -118,10 +98,11 @@ const Home = () => {
           justifyContent: "center",
           flexDirection: "row",
           alignItems: "center",
-          flexWrap: 'wrap',
+          flexWrap: "wrap",
         }}
       >
-        {games.length > 0 && games.map((game) => <Games game={game} />)}
+        {games.length > 0 &&
+          games.map((game) => <Games key={game.id} game={game} />)}
       </div>
     </main>
   );

@@ -174,7 +174,7 @@ export default function PrimarySearchAppBar() {
           >
             <Link to="/" style={{ textDecoration: "none" }}>
               <Button color="inherit">
-                <h1 style={{ color: "white", size: "small" }}>ATTS Games</h1>
+                <h1 style={{ color: "white", size: "small" }}>Game Library</h1>
               </Button>
             </Link>
           </Typography>

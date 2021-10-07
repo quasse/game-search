@@ -26,13 +26,7 @@ const Games = ({ game, isProfile = false }) => {
   console.log("game ", game);
 
   return (
-    <Card
-      sx={{
-        background: "light",
-        margin: "10px",
-        width: `45vw`,
-      }}
-    >
+    <Card className="game-card">
       <div className="games" onClick={console.log("hello")}>
         <CardContent
           sx={{
@@ -46,19 +40,21 @@ const Games = ({ game, isProfile = false }) => {
           <CardMedia
             component="img"
             width="25vw"
-            //style={{ width: "80%", outline: "auto" }}
+            height="325vw"
             image={game.background_image || game.image}
-            style={{ margin: "0 auto", borderRadius: 1, outline: "1" }}
+            // style={{ margin: "0 auto", borderRadius: 1, outline: "1" }}
           />
-          {/* <img
-              
-              src
-              alt={game.name}
-            /> */}
           <Link to={`/game/${game.id}`}>
             <div>
-          
-              <p style={{ borderRadius: 1, outline: "1", textAlign: "center", color: "black", fontSize: "150%" }}>
+              <p
+                style={{
+                  borderRadius: 1,
+                  outline: "1",
+                  textAlign: "center",
+                  color: "black",
+                  fontSize: "150%",
+                }}
+              >
                 {game.name || game.title}
               </p>
             </div>
