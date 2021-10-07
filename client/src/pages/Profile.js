@@ -24,7 +24,14 @@ const Profile = (props) => {
   return (
     <div className="profile-Container">
       <h2>Viewing{` ${user.username}'s profile`}</h2>
-      <div >
+      <div 
+      style={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "row",
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}>
         {user.games.length > 0 ? (
           user.games.map((game) => (
             <Games className="profile-games" key={game._id} game={game} isProfile={true} />
