@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ADD_GAME } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
-
+import "../../pages/gameDetail.css";
 const GameDetail = (props) => {
   const [game, setGame] = useState("");
 
@@ -37,14 +37,16 @@ const GameDetail = (props) => {
   };
 
   return (
-    <div>
-      <h1>{game.name}</h1>
-      <img
-        style={{ width: "50vw"  }}
+    <div className= "title">
+      <h1 >{game.name}</h1>
+      <img className= "img"
+        style={{ width: "50vw", textAlign: "center", borderRadius: 1, outline: "1"}}
         src={game.background_image_additional}
         alt={game.name}
       />
-      <p>{game.description_raw}</p>
+      <p>{game.description_raw}
+      
+      </p>
 
       {Auth.loggedIn() ? (
         <button onClick={handleClick}>Add game</button>
