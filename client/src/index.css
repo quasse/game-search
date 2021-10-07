@@ -137,12 +137,45 @@ a {
   font-weight: bolder;
   
 }
-
-
-
-@media screen and (max-width: 720px) {
-  .game-card {
-    width: 80vw;
-    height: 50vw;
+/* For game card scaling on home page */
+@media screen and (max-width: 1250px) {
+  /* .game-card{
+    width: 100vw !important;
+  } */
+  .game-card-img {
+    height: 27vh !important;
   }
 }
+@media screen and (max-width: 1025px) {
+  .game-card-img {
+    height: 25vh !important;
+  }
+}
+@media screen and (max-width: 769px) {
+  .game-card{
+    width: 35vw !important;
+  }
+  .game-card-img {
+    width: 30vw !important; 
+    height: 23vh !important;
+  }
+}
+@media screen and (max-width: 481px) {
+  .game-card{
+    width: 55vw !important;
+  }
+  .game-card-img {
+    width: 30vw !important; 
+    height: 21vh !important;
+  }
+}
+@media screen and (max-width: 320px) {
+  .game-card{
+    width: 55vw !important;
+  }
+  .game-card-img {
+    width: 30vw !important; 
+    height: 19vh !important;
+  }
+}
+

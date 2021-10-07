@@ -28,8 +28,9 @@ const Games = ({ game, isProfile = false }) => {
     <Card className="game-card"
     sx={{
       border:"3px solid",
-      borderColor: 'rgba(1, 8, 18 .5)'
-      
+      borderColor: 'rgba(1, 8, 18 .5)',
+      width: "25vw",
+      height: "40vh",
 
     }}
     >
@@ -50,9 +51,11 @@ const Games = ({ game, isProfile = false }) => {
         >
           <CardMedia className= "game-card-img"
             component="img"
-            width="25vw"
-            height="325vw"
             border= "3px" 
+            sx={{
+              width: "23vw",
+              height: "30vh",
+            }}
             image={game.background_image || game.image}
      
           />
