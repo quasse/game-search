@@ -1,43 +1,52 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #8e8e8e;
 }
 
+/* main {
+  background-color: #8e8e8e;
+} */
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.login-container{
+.login-container {
   position: relative;
   margin: 0 auto 0 auto;
   top: 70px;
-  background-color: rgb(60, 109, 199);
-  padding:30px;
+  padding-top: 30%;
+  background-color: rgb(67, 71, 78);
+  padding: 30px;
   height: 450px;
   width: 31%;
   border-style: solid;
   border-width: 15px;
-  border-color:rgb(90, 154, 238);
+  border-color: rgb(90, 154, 238);
   border-radius: 10px;
+  opacity: 1;
 }
-.signup-container{
+.signup-container {
   position: relative;
   margin: 0 auto 0 auto;
   top: 70px;
-  background-color: rgb(60, 109, 199);
-  padding:30px;
-  height: 600px;
+  padding-top: 30%;
+  background-color: rgb(67, 71, 78);
+  padding: 30px;
+  height: 450px;
   width: 31%;
   border-style: solid;
   border-width: 15px;
-  border-color:rgb(90, 154, 238);
+  border-color: rgb(90, 154, 238);
   border-radius: 10px;
+  opacity: 1;
 }
-.login-container h4{
+.login-container h4 {
   color: white;
   font-weight: bold;
   font-size: 45px;
@@ -45,7 +54,7 @@ code {
   margin-top: 15px;
   margin-bottom: 20px;
 }
-.signup-container h4{
+.signup-container h4 {
   color: white;
   font-weight: bold;
   font-size: 45px;
@@ -53,52 +62,87 @@ code {
   margin-top: 15px;
   margin-bottom: 20px;
 }
-.login-form{
+.login-form {
   display: flex;
   margin-top: 100px;
   width: 90%;
   margin: 0 auto 0 auto;
   flex-direction: column;
 }
-.signup-form{
+.signup-form {
   display: flex;
   margin-top: 100px;
   width: 90%;
   margin: 0 auto 0 auto;
   flex-direction: column;
 }
-.form-input{
+.form-input {
   font-size: 25px;
-  height:40px;
+  height: 40px;
   margin-bottom: 50px;
 }
-.login-form label{
+.login-form label {
   color: white;
   font-size: 25px;
 }
-.signup-form label{
+.signup-form label {
   color: white;
   font-size: 25px;
 }
-.form-button{
+.form-button {
   font-size: 30px;
   font-weight: bold;
-  color: white;
+  color: rgb(255, 255, 255);
   margin-top: 50px;
-  background-color: rgb(55, 41, 247);
+  background-color: rgb(32, 47, 253);
   border-style: solid;
   border-radius: 18px;
-  border-color: rgba(25, 11, 230, 0.74);
+  border-color: rgba(0, 0, 0, 0.74);
 }
 .form-button:hover {
   font-size: 33px;
   border-width: 5px;
   margin-top: 45px;
 }
-.form-button:active{
+.form-button:active {
   font-size: 30px;
   border-width: 3px;
   margin-top: 50px;
 }
 
+a {
+  text-decoration: none;
+}
 
+.main-message {
+  text-align: center;
+  color: white;
+}
+
+.game-card {
+  background: light;
+  margin: 10px;
+  width: 45vw;
+  height: 35vw;
+  
+}
+
+.button {
+  color:rgb(226, 226, 240);
+  font-size: bolder;
+  background-color: rgb(19, 33, 231);
+  border: 3px solid rgb(49, 46, 46);
+  font-size: 15px;
+  opacity: .75;
+  font-weight: bolder;
+  
+}
+
+
+
+@media screen and (max-width: 720px) {
+  .game-card {
+    width: 80vw;
+    height: 50vw;
+  }
+}

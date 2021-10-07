@@ -1,9 +1,8 @@
-import { isInlineFragment } from "@apollo/client/utilities";
-import { Grid, gridClasses, Card, CardContent, CardMedia } from "@mui/material";
+import { Card, CardContent, CardMedia } from "@mui/material";
 import React from "react";
 import { useMutation } from "@apollo/client";
 import { DELETE_GAME } from "../../utils/mutations";
-
+import "../../../src/index.css";
 import { Link } from "react-router-dom";
 
 const Games = ({ game, isProfile = false }) => {
@@ -26,11 +25,13 @@ const Games = ({ game, isProfile = false }) => {
   console.log("game ", game);
 
   return (
-    <Card
-      sx={{
-        margin: "10px",
-        width: `45vw`,
-      }}
+    <Card className="game-card"
+    sx={{
+      border:"3px solid",
+      borderColor: 'rgba(1, 8, 18 .5)'
+      
+
+    }}
     >
       <div className="games" onClick={console.log("hello")}>
         <CardContent
@@ -39,27 +40,39 @@ const Games = ({ game, isProfile = false }) => {
             justifyContent: "center",
             flexDirection: "column",
             alignItems: "center",
+            color: "trans",
+            borderColor: 'rgba(1, 8, 18 .5)',
+            paddingRight: '10px',
+            paddingLeft: '10px',
+            marginLeft: '10px',
+            marginRight: '10px',
           }}
         >
-          <CardMedia
+          <CardMedia className= "game-card-img"
             component="img"
             width="25vw"
-            //style={{ width: "80%", outline: "auto" }}
+            height="325vw"
+            border= "3px" 
             image={game.background_image || game.image}
-            style={{ margin: "0 auto" }}
+     
           />
-          {/* <img
-              
-              src
-              alt={game.name}
-            /> */}
           <Link to={`/game/${game.id}`}>
-            <p style={{ borderRadius: 1, outline: "1", textAlign: "center" }}>
-              {game.name || game.title}
-            </p>
+            <div>
+              <p
+                style={{
+                  borderRadius: "1",
+                  outline: "4",
+                  textAlign: "center",
+                  color: "black",
+                  fontSize: "150%",
+                }}
+              >
+                {game.name || game.title}
+              </p>
+            </div>
           </Link>
           {isProfile && (
-            <button dataid={game._id} onClick={handleClick}>
+            <button className="button" dataid={game._id} onClick={handleClick}>
               Delete game
             </button>
           )}
