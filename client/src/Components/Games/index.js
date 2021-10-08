@@ -30,7 +30,7 @@ const Games = ({ game, isProfile = false }) => {
       border:"3px solid",
       borderColor: 'rgba(1, 8, 18 .5)',
       width: "25vw",
-      height: "40vh",
+      height: "47vh",
 
     }}
     >
